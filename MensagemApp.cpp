@@ -1,13 +1,17 @@
-class MensagemApp : public Notificacao {
+#include <iostream>
+#include "MensagemApp.h"
 
-private:
+using namespace std;
 
-string nomeAplicativo;
+MensagemApp::MensagemApp(string destinatario, string nomeAplicativo)
+    : Notificacao(destinatario) {
+    this->nomeAplicativo = nomeAplicativo;
+}
 
-public:
-
-// implemente o construtor
-
-// implemente o método enviar()
-
-};
+void MensagemApp::enviar() {
+    cout << "Enviando mensagem pelo "
+         << nomeAplicativo
+         << " para "
+         << destinatario
+         << endl;
+}
